@@ -8,7 +8,7 @@ import position.Position;
 import position.PositionTypes;
 import processing.core.PApplet;
 
-public class DisplayField extends PApplet 
+public class TestingWIthDisplay extends PApplet 
 {
 	public static void main(String[] args)
 	{ 
@@ -64,7 +64,7 @@ public class DisplayField extends PApplet
 		displayCode.put(PositionTypes.HAZARD, "x");
 		
 		
-		System.out.println(field.textDisplay(displayCode));
+		//System.out.println(field.textDisplay(displayCode));
 		
 		
 		display();

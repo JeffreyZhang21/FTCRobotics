@@ -26,6 +26,14 @@ public class Field extends Grid<Position>
 	public Field(Position[][] grid)
 	{ super(grid); }
 	
+	public void init()
+	{
+		for(int i=0; i<super.getRows(); i++)
+			for(int j=0; j<super.getCols(); j++)
+				super.set(i, j, new Position(i,j));
+	}
+	
+	
 	/**
 	 * opens a saved version of Field with all of its data saved. The current Field is not set to the opened file. A new version is only created
 	 * @param name A string represents the name of the file that should be opened. File extension should no be added as this method does it automatically
@@ -111,23 +119,7 @@ public class Field extends Grid<Position>
 		{
 			r+= "{ ";
 			for(int j=0; j<super.getRows(); j++)
-				r += super.get(i, j) + ", ";
-			r += "}\n";
-		}
-		return r; 
-	}
-	
-	public String textDisplay(HashMap<PositionTypes,String> displayCode)
-	{
-		String r = "";
-		for(int i=0; i<super.getRows(); i++)
-		{
-			r+= "{ ";
-			for(int j=0; j<super.getRows(); j++)
-				if(displayCode != null)
-					r += displayCode.get(super.get(i, j).getDataPriority(PositionTypes.values())) + ", ";
-				else
-					r += super.get(i, j).getDataPriority(PositionTypes.values()).toString().charAt(0) + ", ";
+				r += super.get(i, j) + ",";
 			r += "}\n";
 		}
 		return r; 
