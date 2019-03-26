@@ -8,11 +8,11 @@ import position.Position;
 import position.PositionTypes;
 import processing.core.PApplet;
 
-public class TestingWIthDisplay extends PApplet 
+public class TestingWithDisplay extends PApplet 
 {
 	public static void main(String[] args)
 	{ 
-		PApplet.main("display.DisplayField");
+		PApplet.main("display.TestingWithDisplay");
 	}
 	private Field field;
 	private int positionSize = 10;
