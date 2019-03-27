@@ -9,7 +9,6 @@ import grid.Pair;
 import position.Position;
 import position.PositionTypes;
 
-
 public class AStar 
 {
 	private Grid<Position> field;

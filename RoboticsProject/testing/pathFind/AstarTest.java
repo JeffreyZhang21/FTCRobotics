@@ -1,4 +1,4 @@
-package display;
+package pathFind;
 
 import java.util.HashMap;
 
@@ -8,11 +8,11 @@ import position.Position;
 import position.PositionTypes;
 import processing.core.PApplet;
 
-public class TestingWithDisplay extends PApplet 
+public class AstarTest extends PApplet 
 {
 	public static void main(String[] args)
 	{ 
-		PApplet.main("display.TestingWithDisplay");
+		PApplet.main("pathFind.AstarTest");
 	}
 	private Field field;
 	private int positionSize = 10;

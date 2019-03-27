@@ -1,7 +1,5 @@
 package position;
 
-import counter.Counter;
-
 public class Position extends Counter<PositionTypes> 
 {
 	private int x,y;
