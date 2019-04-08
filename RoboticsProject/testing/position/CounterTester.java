@@ -1,4 +1,4 @@
-package counter;
+package position;
 
 public class CounterTester 
 {

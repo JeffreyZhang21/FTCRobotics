@@ -10,41 +10,40 @@ import javax.swing.*;
 import grid.Field;
 import position.PositionTypes;
 
-public class VisualDisplay 
+public class VisualDisplay extends Display 
 {
-	private Field field;
 	private JFrame frame;
 	public VisualDisplay(Field field)
-	{
-		this.field = field;
-		render();
+	{ 
+		super(field); 
+		frame = new JFrame("field");
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		init();
 	}
 	
-	public JFrame render()
-	{
-		JFrame frame = new JFrame();
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+	
+	public void display(boolean visible)
+	{ frame.setVisible(visible); }
+
+	public String display() {
+		display(true);
+		return null;
+	}
+	
+	public void init() {
 		JPanel pane = new JPanel();
-		pane.setLayout(new GridLayout(field.getRows(),field.getCols()));
+		pane.setLayout(new GridLayout(super.getField().getRows(),super.getField().getCols()));
 		
-		for(int i=0; i<field.getRows(); i++)
-			for(int j=0; j<field.getCols(); j++)
+		for(int i=0; i<super.getField().getRows(); i++)
+			for(int j=0; j<super.getField().getCols(); j++)
 			{
 				JPanel temp = new JPanel();
 				temp.setPreferredSize(new Dimension(10,10));
-				PositionTypes t = field.get(i, j).getDataPriority(PositionTypes.values());
+				PositionTypes t = super.getField().get(i, j).getDataPriority(PositionTypes.values());
 				temp.setBackground(new Color(t.getR(),t.getG(),t.getB()));
 				pane.add(temp);
 			}
 		frame.getContentPane().add(pane, BorderLayout.CENTER);
 		frame.pack();
-		this.frame = frame;
-		return frame;
-		
-	}
-	
-	public void display(boolean visible)
-	{
-		frame.setVisible(visible);
 	}
 }
