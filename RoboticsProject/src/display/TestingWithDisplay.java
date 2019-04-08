@@ -19,7 +19,7 @@ public class TestingWithDisplay extends PApplet
 	
 	public void settings()
 	{
-		field = new Field(30,30);
+		field = new Field(50,50);
 		size(field.getCols()*positionSize,field.getRows()*positionSize);
 	}
 	
@@ -30,7 +30,7 @@ public class TestingWithDisplay extends PApplet
 				field.set(i, j,new Position(i*positionSize,j*positionSize));
 		
 		Position start = field.get(0, 0);
-		Position end   = field.get(29, 29);
+		Position end   = field.get(49, 29);
 		
 		start.add(PositionTypes.START);
 		end.add(PositionTypes.END);

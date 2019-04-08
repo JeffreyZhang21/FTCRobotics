@@ -127,8 +127,8 @@ public class AStar
 	
 	public double heuristicCost(Position a, Position b)
 	{
-		//return Math.abs(a.getX()-b.getX()) + Math.abs(a.getY()-b.getY());
-		return Position.distance(a,b);
+		return Math.abs(a.getX()-b.getX()) + Math.abs(a.getY()-b.getY());
+		//return Position.distance(a,b);
 	}
 	
 	public int getPathLength()
